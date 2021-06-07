@@ -16,7 +16,6 @@ function NewsList() {
           "https://newsapi.org/v2/top-headlines?country=kr&apiKey=cb7f2c87059e431aac872c465d1287bd"
         );
         setArticles(response.data.articles);
-        console.log(response.data.articles);
       } catch (e) {
         console.log(e);
       }
@@ -34,19 +33,14 @@ function NewsList() {
   }
 
   return (
-    <div>
-      {articles.map((article) => (
-        <div>{article.title}</div>
-      ))}
-    </div>
+    <>
+      <div>
+        {articles.map((article) => (
+          <NewsArticle key={article.url} article={article} />
+        ))}
+      </div>
+    </>
   );
-
-  // <div>
-  //   {articles.map((article) => (
-  //     <NewsArticle key={article.url} article={article} />
-  //   ))}
-  //   {articles}
-  // </div>
 }
 
 export default NewsList;

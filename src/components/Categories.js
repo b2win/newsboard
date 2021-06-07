@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import logoImage from "../logoImage.png";
 
 const categories = [
   "all",
@@ -35,11 +36,18 @@ const Category = styled.h1`
 
 function Categories() {
   return (
-    <CategoriesBlock>
-      {categories.map((category) => (
-        <Category>{category}</Category>
-      ))}
-    </CategoriesBlock>
+    <>
+      <CategoriesBlock>
+        <img
+          src={logoImage}
+          alt="Logo"
+          style={{ width: "120px", borderRadius: "100%" }}
+        />
+        {categories.map((category) => (
+          <Category>{category}</Category>
+        ))}
+      </CategoriesBlock>
+    </>
   );
 }
 
