@@ -10,13 +10,36 @@ const categories = [
   "sports",
 ];
 
+const CategoriesBlock = styled.div`
+  display: flex;
+  padding: 1rem;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Category = styled.h1`
+  font-size: 2rem;
+  cursor: pointer;
+  white-space: pre;
+  color: inherit;
+
+  &:hover {
+    color: #495057;
+  }
+  & + & {
+    margin-left: 2rem;
+  }
+`;
+
 function Categories() {
   return (
-    <div>
+    <CategoriesBlock>
       {categories.map((category) => (
-        <h1>{category}</h1>
+        <Category>{category}</Category>
       ))}
-    </div>
+    </CategoriesBlock>
   );
 }
 
