@@ -14,10 +14,14 @@ const categories = [
 const CategoriesBlock = styled.div`
   display: flex;
   padding: 1rem;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+  img {
+    width: 120px;
+    border-radius: 100%;
+  }
 `;
 
 const Category = styled.h1`
@@ -38,11 +42,7 @@ function Categories() {
   return (
     <>
       <CategoriesBlock>
-        <img
-          src={logoImage}
-          alt="Logo"
-          style={{ width: "120px", borderRadius: "100%" }}
-        />
+        <img src={logoImage} alt="Logo" className="Logo" />
         {categories.map((category) => (
           <Category>{category}</Category>
         ))}

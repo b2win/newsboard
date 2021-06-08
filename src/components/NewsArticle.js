@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Pagenation from "./Pagenation";
 
 const NewsArticleBlock = styled.div`
   display: flex;
@@ -32,27 +33,34 @@ const NewsArticleBlock = styled.div`
   }
 `;
 
-function NewsArticle({ article }) {
+function NewsArticle({ article, id }) {
   const { title, description, url, urlToImage, publishedAt } = article;
+  console.log(id);
+  const pageLength = article.length;
+  console.log(pageLength);
+
   return (
-    <NewsArticleBlock>
-      {urlToImage && (
-        <div className="thumbnail">
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            <img src={urlToImage} alt="article img" />
-          </a>
+    <>
+      <NewsArticleBlock>
+        {urlToImage && ( //이미지 없을때 넣은 문구/이미지 넣기
+          <div className="thumbnail">
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              <img src={urlToImage} alt="article img" />
+            </a>
+          </div>
+        )}
+        <div className="contents">
+          <h2>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              {title}
+            </a>
+          </h2>
+          <p>{description}</p>
+          <p>{publishedAt.substr(0, 10)}</p>
         </div>
-      )}
-      <div className="contents">
-        <h2>
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            {title}
-          </a>
-        </h2>
-        <p>{description}</p>
-        <p>{publishedAt}</p>
-      </div>
-    </NewsArticleBlock>
+      </NewsArticleBlock>
+      <Pagenation />
+    </>
   );
 }
 

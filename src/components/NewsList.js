@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import NewsArticle from "./NewsArticle";
 import loadingImage from "../loadingImage.gif";
+import Pagenation from "./Pagenation";
 
 function NewsList() {
   const [loading, setLoading] = useState(false);
@@ -35,8 +36,8 @@ function NewsList() {
   return (
     <>
       <div>
-        {articles.map((article) => (
-          <NewsArticle key={article.url} article={article} />
+        {articles.map((article, id) => (
+          <NewsArticle key={article.url} article={article} id={id + 1} />
         ))}
       </div>
     </>
