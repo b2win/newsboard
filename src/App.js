@@ -1,11 +1,11 @@
-import Categories from "./components/Categories";
-import NewsList from "./components/NewsList";
+import { Route } from "react-router-dom";
+import ArticlePage from "./pages/ArticlePage";
 
 function App() {
   return (
     <div>
-      <Categories />
-      <NewsList />
+      {/* <Route path="/" component={ArticlePage} /> */}
+      <Route path="/:category?" component={ArticlePage} />
     </div>
   );
 }

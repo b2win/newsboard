@@ -35,9 +35,9 @@ const NewsArticleBlock = styled.div`
 
 function NewsArticle({ article, id }) {
   const { title, description, url, urlToImage, publishedAt } = article;
-  console.log(id);
-  const pageLength = article.length;
-  console.log(pageLength);
+  // console.log(id);
+  // const pageLength = article.length;
+  // console.log(pageLength);
 
   return (
     <>

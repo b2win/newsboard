@@ -48,7 +48,7 @@ function Pagenation({ paginate, inx }) {
   const pageNumber = [];
   for (let i = 0; i <= Math.ceil(inx / articlesPerPage); i++) {
     pageNumber.push(i);
-    console.log(pageNumber);
+    // console.log(pageNumber);
   }
 
   return (

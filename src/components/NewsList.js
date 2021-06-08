@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import NewsArticle from "./NewsArticle";
 import loadingImage from "../loadingImage.gif";
-import Pagenation from "./Pagenation";
 
 function NewsList({ category }) {
   const [loading, setLoading] = useState(false);
@@ -17,7 +16,9 @@ function NewsList({ category }) {
         const response = await axios.get(
           `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=cb7f2c87059e431aac872c465d1287bd`
         );
+        console.log(category);
         setArticles(response.data.articles);
+        console.log(response.data.articles);
       } catch (e) {
         console.log(e);
       }
