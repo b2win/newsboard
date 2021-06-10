@@ -7,6 +7,7 @@ import styled from "styled-components";
 function NewsList({ category }) {
   const [loading, setLoading] = useState(false);
   const [articles, setArticles] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,8 +18,16 @@ function NewsList({ category }) {
           `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=cb7f2c87059e431aac872c465d1287bd`
         );
         console.log(category);
-        setArticles(response.data.articles);
-        console.log(response.data.articles);
+        // setArticles(response.data.articles);
+        // console.log(response.data.articles);
+        const news = response.data.articles;
+        setArticles(
+          // 기사 10개씩 페이지네이션 구현 방법 띵크 하기
+          news.slice(0, parseInt(`${pageNumber}`) + `${pageNumber}` * 9)
+        );
+        // console.log(
+        //   news.slice(0, parseInt(`${pageNumber}`) + `${pageNumber}` * 9)
+        // );
       } catch (e) {
         console.log(e);
       }
