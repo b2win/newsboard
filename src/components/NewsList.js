@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import NewsArticle from "./NewsArticle";
 import loadingImage from "../loadingImage.gif";
+import styled from "styled-components";
 
 function NewsList({ category }) {
   const [loading, setLoading] = useState(false);
@@ -12,7 +13,7 @@ function NewsList({ category }) {
       // setLoading(<div>로딩중 ...</div>);
       setLoading(true);
       try {
-        const query = category === "all" ? "" : `&category=${category}`;
+        const query = category === "Headline" ? "" : `&category=${category}`;
         const response = await axios.get(
           `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=cb7f2c87059e431aac872c465d1287bd`
         );
@@ -37,13 +38,22 @@ function NewsList({ category }) {
 
   return (
     <>
-      <div>
+      <NewsListBlock>
         {articles.map((article, id) => (
           <NewsArticle key={article.url} article={article} id={id + 1} />
         ))}
-      </div>
+      </NewsListBlock>
     </>
   );
 }
 
 export default NewsList;
+
+const NewsListBlock = styled.div`
+  margin: 0 auto; // 중앙으로 배치 할때!
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+`;

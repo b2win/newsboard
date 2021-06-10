@@ -4,7 +4,7 @@ import logoImage from "../logoImage.png";
 import { Link, NavLink } from "react-router-dom";
 
 const categories = [
-  "All",
+  "Headline",
   "Business",
   "Entertainment",
   "Health",
@@ -21,7 +21,7 @@ function Categories() {
         </Link>
         <Category>
           {categories.map((category) =>
-            category === "All" ? (
+            category === "Headline" ? (
               <Link to="/" className="menu">
                 {category}
               </Link>

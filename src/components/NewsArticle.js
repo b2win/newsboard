@@ -36,7 +36,7 @@ function NewsArticle({ article, id }) {
 export default NewsArticle;
 
 const NewsArticleBlock = styled.div`
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   .thumbnail {
@@ -52,6 +52,8 @@ const NewsArticleBlock = styled.div`
   .contents {
     h2 {
       margin: 0;
+      width: 300px;
+
       a {
         color: black;
       }
@@ -61,6 +63,7 @@ const NewsArticleBlock = styled.div`
       line-height: 1.5;
       margin-top: 0.5rem;
       white-space: normal;
+      width: 300px;
     }
   }
   & + & {
