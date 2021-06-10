@@ -2,37 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Pagenation from "./Pagenation";
 
-const NewsArticleBlock = styled.div`
-  display: flex;
-  .thumbnail {
-    margin-right: 1rem;
-    img {
-      display: block;
-      width: 320px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10%;
-    }
-  }
-  .contents {
-    h2 {
-      margin: 0;
-      a {
-        color: black;
-      }
-    }
-    p {
-      margin: 0;
-      line-height: 1.5;
-      margin-top: 0.5rem;
-      white-space: normal;
-    }
-  }
-  & + & {
-    margin-top: 3rem;
-  }
-`;
-
 function NewsArticle({ article, id }) {
   const { title, description, url, urlToImage, publishedAt } = article;
   // console.log(id);
@@ -65,3 +34,36 @@ function NewsArticle({ article, id }) {
 }
 
 export default NewsArticle;
+
+const NewsArticleBlock = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .thumbnail {
+    margin-right: 1rem;
+    img {
+      display: block;
+      width: 320px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10%;
+    }
+  }
+  .contents {
+    h2 {
+      margin: 0;
+      a {
+        color: black;
+      }
+    }
+    p {
+      margin: 0;
+      line-height: 1.5;
+      margin-top: 0.5rem;
+      white-space: normal;
+    }
+  }
+  & + & {
+    margin-top: 3rem;
+  }
+`;

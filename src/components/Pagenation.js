@@ -1,6 +1,30 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+function Pagenation({ paginate, inx }) {
+  // console.log(inx);
+  const [articlesPerPage, setArticlesPerPage] = useState(5);
+  const pageNumber = [];
+  for (let i = 0; i <= Math.ceil(inx / articlesPerPage); i++) {
+    pageNumber.push(i);
+    // console.log(pageNumber);
+  }
+
+  return (
+    <div>
+      {pageNumber.map((number) => (
+        <PageLi key={number} className="page-item">
+          <PageSpan onClick={() => paginate(number)} className="page-link">
+            {number}
+          </PageSpan>
+        </PageLi>
+      ))}
+    </div>
+  );
+}
+
+export default Pagenation;
+
 const PageUl = styled.ul`
   float: left;
   list-style: none;
@@ -41,27 +65,3 @@ const PageSpan = styled.span`
     background-color: #263a6c;
   }
 `;
-
-function Pagenation({ paginate, inx }) {
-  // console.log(inx);
-  const [articlesPerPage, setArticlesPerPage] = useState(5);
-  const pageNumber = [];
-  for (let i = 0; i <= Math.ceil(inx / articlesPerPage); i++) {
-    pageNumber.push(i);
-    // console.log(pageNumber);
-  }
-
-  return (
-    <div>
-      {pageNumber.map((number) => (
-        <PageLi key={number} className="page-item">
-          <PageSpan onClick={() => paginate(number)} className="page-link">
-            {number}
-          </PageSpan>
-        </PageLi>
-      ))}
-    </div>
-  );
-}
-
-export default Pagenation;
