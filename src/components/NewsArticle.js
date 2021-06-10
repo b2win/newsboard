@@ -8,6 +8,8 @@ function NewsArticle({ article, id }) {
   // const pageLength = article.length;
   // console.log(pageLength);
 
+  if (!urlToImage) return null;
+
   return (
     <>
       <NewsArticleBlock>

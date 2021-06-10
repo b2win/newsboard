@@ -10,7 +10,9 @@ function ArticlePage({ match }) {
   return (
     <ArticlePageBlock>
       <Categories />
+      <hr />
       <NewsList category={category} />
+      <hr />
     </ArticlePageBlock>
   );
 }
@@ -22,4 +24,7 @@ const ArticlePageBlock = styled.div`
   /* justify-content: center;
   align-items: center; */
   box-sizing: border-box;
+  hr {
+    border: 1px solid #e2e2e2;
+  }
 `;

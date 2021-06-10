@@ -33,7 +33,6 @@ function Categories() {
           )}
         </Category>
       </CategoriesBlock>
-      <hr />
     </>
   );
 }
@@ -68,10 +67,9 @@ const CategoriesBlock = styled.div`
 `;
 
 const Category = styled.h2`
-  font-size: 2rem;
+  font-size: 1.8rem;
   white-space: pre;
   display: inline-flex;
-  margin-left: 3rem;
 `;
 
 // const Category = styled.Link`
