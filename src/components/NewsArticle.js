@@ -26,8 +26,10 @@ function NewsArticle({ article, id }) {
               {title.split("-")[0]}
             </a>
           </h2>
-          <span>{title.split("-")[1]}</span>
-          <span>{publishedAt.substr(0, 10)}</span>
+          <div>
+            <span className="company">{title.split("-")[1]}</span>
+            <span className="article-date">{publishedAt.substr(0, 10)}</span>
+          </div>
           <p>{description}</p>
         </div>
       </NewsArticleBlock>
@@ -70,6 +72,23 @@ const NewsArticleBlock = styled.div`
       height: 100px;
       overflow-y: hidden;
       overflow-x: hidden;
+    }
+    div {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      width: 256px;
+    }
+    .company {
+      float: left;
+      width: 100px;
+      color: #808080;
+      font-size: 0.8rem;
+    }
+    .article-date {
+      margin-left: 3rem;
+      color: #808080;
+      font-size: 0.8rem;
     }
   }
   /* & + & {
