@@ -24,8 +24,8 @@ function NewsArticle({ article, id }) {
               {title}
             </a>
           </h2>
+          <span>{publishedAt.substr(0, 10)}</span>
           <p>{description}</p>
-          <p>{publishedAt.substr(0, 10)}</p>
         </div>
       </NewsArticleBlock>
       <Pagenation />
@@ -52,8 +52,8 @@ const NewsArticleBlock = styled.div`
   .contents {
     h2 {
       margin: 0;
+      font-size: 1.2rem;
       width: 300px;
-
       a {
         color: black;
       }
@@ -64,9 +64,11 @@ const NewsArticleBlock = styled.div`
       margin-top: 0.5rem;
       white-space: normal;
       width: 300px;
+      height: 100px;
+      overflow-y: hidden;
     }
   }
-  & + & {
+  /* & + & {
     margin-top: 3rem;
-  }
+  } */
 `;

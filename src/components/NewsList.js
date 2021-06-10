@@ -10,7 +10,6 @@ function NewsList({ category }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      // setLoading(<div>로딩중 ...</div>);
       setLoading(true);
       try {
         const query = category === "Headline" ? "" : `&category=${category}`;
@@ -29,7 +28,17 @@ function NewsList({ category }) {
   }, [category]);
 
   if (loading) {
-    return <img src={loadingImage} alt="loading Img" />;
+    return (
+      <img
+        src={loadingImage}
+        alt="loading Img"
+        style={{
+          width: "300px",
+          display: "flex",
+          margin: "0 auto",
+        }}
+      />
+    );
   }
 
   if (!articles) {
