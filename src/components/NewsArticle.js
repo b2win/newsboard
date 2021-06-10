@@ -36,9 +36,9 @@ function NewsArticle({ article, id }) {
 export default NewsArticle;
 
 const NewsArticleBlock = styled.div`
-  /* display: flex; */
   align-items: center;
   justify-content: center;
+  height: 400px;
   .thumbnail {
     margin-right: 1rem;
     img {
