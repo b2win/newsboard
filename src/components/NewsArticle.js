@@ -23,9 +23,10 @@ function NewsArticle({ article, id }) {
         <div className="contents">
           <h2>
             <a href={url} target="_blank" rel="noopener noreferrer">
-              {title}
+              {title.split("-")[0]}
             </a>
           </h2>
+          <span>{title.split("-")[1]}</span>
           <span>{publishedAt.substr(0, 10)}</span>
           <p>{description}</p>
         </div>
@@ -45,8 +46,8 @@ const NewsArticleBlock = styled.div`
     margin-right: 1rem;
     img {
       display: block;
-      width: 320px;
-      height: 200px;
+      width: 256px;
+      height: 160px;
       object-fit: cover;
       border-radius: 10%;
     }
@@ -55,7 +56,7 @@ const NewsArticleBlock = styled.div`
     h2 {
       margin: 0;
       font-size: 1.2rem;
-      width: 300px;
+      width: 256px;
       a {
         color: black;
       }
@@ -65,9 +66,10 @@ const NewsArticleBlock = styled.div`
       line-height: 1.5;
       margin-top: 0.5rem;
       white-space: normal;
-      width: 300px;
+      width: 256px;
       height: 100px;
       overflow-y: hidden;
+      overflow-x: hidden;
     }
   }
   /* & + & {

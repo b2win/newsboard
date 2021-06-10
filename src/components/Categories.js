@@ -46,7 +46,7 @@ const CategoriesBlock = styled.div`
   display: flex;
   @media screen and (max-width: 768px) {
     width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
   }
   img {
     width: 100px;

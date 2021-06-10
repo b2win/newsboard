@@ -60,7 +60,7 @@ export default NewsList;
 
 const NewsListBlock = styled.div`
   margin: 0 auto; // 중앙으로 배치 할때!
-  width: 80%;
+  width: 75%;
   justify-content: center;
   align-items: center;
   display: flex;
