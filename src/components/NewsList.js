@@ -43,7 +43,7 @@ function NewsList({ category }) {
         src={loadingImage}
         alt="loading Img"
         style={{
-          width: "300px",
+          width: "150px",
           display: "flex",
           margin: "0 auto",
         }}

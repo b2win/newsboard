@@ -20,17 +20,19 @@ function Categories() {
           <img src={logoImage} alt="Logo" className="Logo" to="/" />
         </Link>
         <Category>
-          {categories.map((category) =>
-            category === "Headline" ? (
-              <Link to="/" className="menu">
-                {category}
-              </Link>
-            ) : (
-              <Link to={category} className="menu">
-                {category}
-              </Link>
-            )
-          )}
+          <div className="sticky">
+            {categories.map((category) =>
+              category === "Headline" ? (
+                <Link to="/" className="menu">
+                  {category}
+                </Link>
+              ) : (
+                <Link to={category} className="menu">
+                  {category}
+                </Link>
+              )
+            )}
+          </div>
         </Category>
       </CategoriesBlock>
     </>
@@ -44,18 +46,21 @@ const CategoriesBlock = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #292929;
+
   @media screen and (max-width: 768px) {
     width: 100%;
     overflow-x: hidden;
   }
   img {
-    width: 100px;
+    width: 60px;
     border-radius: 10%;
-    margin-top: 10px;
   }
   .menu {
     text-decoration: none;
-    color: black;
+    color: white;
     margin-left: 4.5rem;
     &:hover {
       color: gray;
@@ -67,7 +72,6 @@ const Category = styled.h2`
   font-size: 1.5rem;
   white-space: pre;
   display: inline-flex;
-  margin-bottom: -2rem;
 `;
 
 // const Category = styled.Link`

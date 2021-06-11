@@ -16,7 +16,7 @@ function NewsArticle({ article, id }) {
         {urlToImage && ( //이미지 없을때 넣은 문구/이미지 넣기
           <div className="thumbnail">
             <a href={url} target="_blank" rel="noopener noreferrer">
-              <img src={urlToImage} alt="article img" />
+              <img src={urlToImage} alt={title} />
             </a>
           </div>
         )}
