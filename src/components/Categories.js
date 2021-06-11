@@ -50,26 +50,24 @@ const CategoriesBlock = styled.div`
   }
   img {
     width: 100px;
-    border-radius: 100%;
+    border-radius: 10%;
+    margin-top: 10px;
   }
   .menu {
     text-decoration: none;
-    color: green;
-    margin-left: 3rem;
+    color: black;
+    margin-left: 4.5rem;
     &:hover {
-      color: #495057;
+      color: gray;
     }
-    /* & + & {
-      margin-left: 5rem;
-      display: block;
-    } */
   }
 `;
 
 const Category = styled.h2`
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   white-space: pre;
   display: inline-flex;
+  margin-bottom: -2rem;
 `;
 
 // const Category = styled.Link`

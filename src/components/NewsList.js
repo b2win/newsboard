@@ -21,8 +21,9 @@ function NewsList({ category }) {
         // setArticles(response.data.articles);
         // console.log(response.data.articles);
         const news = response.data.articles;
+        // 기사 10개씩 페이지네이션 구현 방법 띵크 하기
+        console.log(news);
         setArticles(
-          // 기사 10개씩 페이지네이션 구현 방법 띵크 하기
           news.slice(0, parseInt(`${pageNumber}`) + `${pageNumber}` * 9)
         );
         // console.log(
